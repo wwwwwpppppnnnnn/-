@@ -1,0 +1,42 @@
+#include <stdio.h>  
+  
+// 冒泡排序函数  
+void bubbleSort(int arr[], int n) {  
+    int i, j, temp;  
+    for (i = 0; i < n-1; i++) {  
+        // 最后的i个元素已经排好序了，所以不需要再比较  
+        for (j = 0; j < n-i-1; j++) {  
+            if (arr[j] > arr[j+1]) {  
+                // 交换arr[j]和arr[j+1]  
+                temp = arr[j];  
+                arr[j] = arr[j+1];  
+                arr[j+1] = temp;  
+            }  
+        }  
+    }  
+}  
+  
+int main() {  
+    // 定义一个无序数组  
+    int unorderedArray[] = {5, 3, 8, 4, 2};  
+    int n = sizeof(unorderedArray) / sizeof(unorderedArray[0]); // 计算数组长度  
+  
+    // 打印原始无序数组  
+    printf("原始无序数组: ");  
+    for (int i = 0; i < n; i++) {  
+        printf("%d ", unorderedArray[i]);  
+    }  
+    printf("\n");  
+  
+    // 使用冒泡排序对数组进行排序  
+    bubbleSort(unorderedArray, n);  
+  
+    // 打印排序后的数组  
+    printf("排序后的数组: ");  
+    for (int i = 0; i < n; i++) {  
+        printf("%d ", unorderedArray[i]);  
+    }  
+    printf("\n");  
+  
+    return 0;  
+}
