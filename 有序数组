@@ -1,0 +1,28 @@
+#include <stdio.h>  
+  
+// 函数声明：计算有序数组中某个数字的数量  
+int countNumberInArray(int arr[], int size, int number);  
+  
+int main() {  
+    // 定义一个有序数组  
+    int orderedArray[] = {1, 2, 2, 4, 4, 4, 5, 6, 7, 8};  
+    int size = sizeof(orderedArray) / sizeof(orderedArray[0]); // 数组的元素个数  
+    int numberToFind = 4; // 我们想要计算这个数在数组中的数量  
+  
+    // 调用函数并打印结果  
+    int count = countNumberInArray(orderedArray, size, numberToFind);  
+    printf("数字 %d 在数组中出现的次数为：%d\n", numberToFind, count);  
+  
+    return 0;  
+}  
+  
+// 函数定义：计算有序数组中某个数字的数量  
+int countNumberInArray(int arr[], int size, int number) {  
+    int count = 0;  
+    for (int i = 0; i < size; i++) {  
+        if (arr[i] == number) {  
+            count++;  
+        }  
+    }  
+    return count;  
+}
